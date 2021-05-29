@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% block title %}Home{% endblock title %}
+
+{% block body %}
+<div class="container mt-3">
+
+    <h5 class="mb-3 border border-warning rounded" style="padding: 10px;color:crimson">This model is able to classify these ten persons image: <br><br>
+        [AAMIR KHAN, ALBERT EINSTEIN, AMITABH BACHCHAN, APJ ABDUL KALAM,
+        BARACK OBAMA, ELON MUSK, JEFF BEZOS, RATAN TATA, SACHIN TENDULKAR,
+        SUNDAR PICHAI]
+    </h5>
+
+
+    <h2>Uplaod Image for Classification</h2>
+
+
+    <br>
+
+    <form method="post" enctype="multipart/form-data" action="/predictImage">
+
+        {% csrf_token %}
+        <div class="col-md-4 col-sm-4">
+            <input id="fname" name="filePath" type="file"><br><br>
+        </div> 
+        <br>
+
+
+        <input class="btn btn-primary" type="submit" value="Predict">
+
+
+    <!-- <h2>The classification of the image is {{predictedLabel}}</h2>
+    <img src="{{filePathName}}"" alt="imagename" height="200" width="200">
+    {{ filePathName }} -->
+
+    </form>
+
+    {% if filePathName %}
+    <h4>Successfully uploaded image: </h4>
+    <img src="{{ filePathName }}" alt="image" class="img-thumbnail" height="200" width="200">
+    <h3 style="color: green;">Predicted Result: {{ name }}</h3>
+    {% endif %} 
+</div>
+{% endblock body %}
