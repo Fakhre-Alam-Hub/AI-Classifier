@@ -13,7 +13,7 @@ SECRET_KEY = 'django-insecure-4%3fsw$uxe&2(y8^u=5o*#nym&7_(1=7&6el5djujk1&q7v=6@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1','ai-classifier-alam.herokuapp.com']
 
 
 # Application definition
